@@ -27,7 +27,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
     /**
      * Static {@link Sport} constant.
      */
-    public static final Sport SOCCER;
+    public static final Sport SOCCER = new Sport();
     /**
      * Static {@link Sport} constant.
      */
@@ -52,8 +52,7 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
     /*
      * TODO: initialize properly these sports
      */
-    static {
-        SOCCER = null;
+    public static final class Sport {
         F1 = null;
         MOTOGP = null;
         VOLLEY = null;
@@ -112,8 +111,9 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      * @param sport
      *            a sport followed/done by the user
      */
-    // TODO
+
     public void addSport(final Sport sport) {
+    	this.sports.add(sport);
 
     }
 
@@ -124,18 +124,20 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
      *            sport to use as an input
      * @return true if a user likes sport s
      */
-    // TODO
+  
     public boolean hasSport(final Sport s) {
-        return false;
+    	return this.sports.contains(s);
+    
     }
-
     /*
      * TODO
      * 
      * Complete the definition of this static inner class defining a Sport along
      * with its bare name.
      */
-    public static final class Sport {
+    public  Sport (final String name){ 
+    	this.name = name;
+    }
         /*
          * TODO
          * 
@@ -148,3 +150,4 @@ public class SportSocialNetworkUserImpl<U extends User> extends SocialNetworkUse
         }
     }
 }
+
