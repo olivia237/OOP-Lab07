@@ -74,7 +74,13 @@ public final class TestAnonymousComparator {
          * 
          * REFER TO LESSON 13-Advanced-Mechanisms.pdf, slide 41
          */
-        // TODO
+      Collections.sort(denzelUsers, new Comparator<User>() {
+    	  public int compare(final User u1, final User u2){
+    	  return Integer.compare(u1.getage(), u2.getage());
+    	  }
+      });
+        
+        
         /*
          * expected Result
          */
@@ -105,7 +111,12 @@ public final class TestAnonymousComparator {
          * NOTE: in order to sort a list think about a method of the utility
          * class Collections
          */
-        // TODO
+        Collections.sort(rossiUsers, new Comparator<User>() {
+      	  public int reversed(final User u1, final User u2){
+      	  return Integer.reversed(u1.getage(), u2.getage());
+      	  }
+        });
+
         /*
          * expected Result
          */
